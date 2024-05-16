@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+/* For Webkit based browsers */
+body {
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: var(--foreground-rgb) var(--background-start-rgb);
+  scrollbar-width: thin;
+  background-color: #121212;
+}
+
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: var(--background-end-rgb);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--foreground-rgb);
+  border-radius: 10px;
+}
+
+/* For Firefox */
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.footer-gradient {
+  position: relative;
+  background: radial-gradient(132.5% 150% at 0% 0%, rgb(84, 84, 84) 2.91423e-14%, rgba(255, 255, 255, 0.03) 37.6389%);
+  overflow: hidden;
+  /* Ensure the pseudo-element is contained within the element */
+}
+
+.footer-gradient::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(132.5% 150% at 50% 0%, rgb(84, 84, 84) 2.91423e-14%, rgba(255, 255, 255, 0.03) 37.6389%);
+  opacity: 0;
+  transition: opacity 0.9s ease-in-out;
+  /* Adjust the transition duration and easing as needed */
+  z-index: -1;
+  /* Ensure the pseudo-element is behind the content */
+}
+
+.footer-gradient:hover::before {
+  opacity: 1;
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 50;
+}
+
+.main-slide::before,
+.main-slide::after {
+  position: absolute;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.main-slide::before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), black);
+}
+
+.main-slide::after {
+  right: 0;
+  top: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), black);
+}
+
+.about-slide::before,
+.about-slide::after {
+  width: 250px;
+  height: 70px;
+  /* content: ""; */
+  z-index: 2;
+}
+
+.about-slide::before {
+  /* left: 0; */
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), black);
+}
+
+.about-slide::after {
+  /* right: 0; */
+  top: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), black);
+}
+
+.service-slide {
+  animation: scroll 2s infinite linear;
+}
+
+.partners-slide {
+  animation: scroll 13s infinite linear;
+}
+
+.view-slide {
+  animation: scroll-view 3s infinite linear;
+}
+
+.scroll-indicator {
+  animation: animate-indicator 2s infinite linear;
+}
+
+@keyframes animate-indicator {
+  0% {
+    height: 0%;
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(30%);
+  }
+}
+
+
+@keyframes scrollVertical1 {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes scrollVertical2 {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  99% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.about-feature1-slide {
+  animation: scrollVertical1 1.7s infinite linear;
+}
+
+.about-feature2-slide {
+  animation: scrollVertical2 1.7s infinite linear;
+}
+
+.text-gradient {
+  opacity: 0.31;
+  background: linear-gradient(286deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes scroll {
+  from {
+    transform: translate(0);
+  }
+
+  to {
+    transform: translate(-100%);
+  }
+}
+
+@keyframes scroll-view {
+  from {
+    transform: translate(0);
+  }
+
+  to {
+    transform: translate(100%);
+  }
+}
+
+.custom-underline {
+  position: relative;
+}
+
+@keyframes underline-grow {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 60%;
+  }
+}
+
+.custom-underline::after {
+  content: "";
+  position: absolute;
+  left: 20%;
+  right: 0;
+  bottom: 1px;
+  height: 1px;
+  background-color: whitesmoke;
+  width: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-underline:hover::after {
+  animation: underline-grow 0.3s forwards;
+}
+.no-line:hover {
+  background-color: rgb(255, 111, 0) !important;
+  color: white;
+  text-decoration: none !important;
+  transition: 0.4s ease-in-out !important;
+}

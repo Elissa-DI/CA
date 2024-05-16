@@ -1,0 +1,50 @@
+{
+  "name": "creative-aminu-porfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.14",
+    "@headlessui/tailwindcss": "^0.1.3",
+    "@next/font": "^14.1.3",
+    "@phosphor-icons/react": "^2.0.13",
+    "@react-three/fiber": "^8.16.6",
+    "@types/node": "18.11.16",
+    "@types/react": "18.0.26",
+    "@types/react-dom": "18.0.9",
+    "add": "^2.0.6",
+    "embla-carousel-react": "^8.0.0-rc23",
+    "eslint": "8.30.0",
+    "eslint-config-next": "13.0.7",
+    "framer-motion": "^10.12.16",
+    "framer-motion-3d": "^11.2.0",
+    "i18next": "^23.5.1",
+    "next": "13.0.7",
+    "next-i18next": "^14.0.3",
+    "next-intl": "^2.20.2",
+    "next-seo": "^6.1.0",
+    "phosphor-react": "^1.4.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-i18next": "^13.2.2",
+    "react-slick": "^0.30.1",
+    "slick-carousel": "^1.8.1",
+    "swr": "^2.0.2",
+    "three": "^0.164.1",
+    "typescript": "4.9.4",
+    "yarn": "^1.22.21"
+  },
+  "devDependencies": {
+    "@types/react-slick": "^0.23.13",
+    "autoprefixer": "^10.4.13",
+    "husky": "^8.0.2",
+    "postcss": "^8.4.20",
+    "tailwindcss": "^3.2.4"
+  }
+}
